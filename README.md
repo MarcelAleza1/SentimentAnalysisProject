@@ -1,0 +1,1 @@
+In this project i have trained and deployed a sentiment analysis model using Amazon SageMaker
