@@ -14844,9 +14844,12 @@ Billable seconds: 280
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Convert test_review into a form usable by the model and save the results in test_data</span>
-<span class="n">test_data</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">test_data_review_to_words</span> <span class="o">=</span> <span class="n">review_to_words</span><span class="p">(</span><span class="n">test_review</span><span class="p">)</span>
-<span class="n">test_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">convert_and_pad</span><span class="p">(</span><span class="n">word_dict</span><span class="p">,</span> <span class="n">test_data_review_to_words</span><span class="p">)[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="c1"># test_data = None</span>
+<span class="c1"># test_data_review_to_words = review_to_words(test_review)</span>
+<span class="c1"># test_data = [np.array(convert_and_pad(word_dict, test_data_review_to_words)[0])]</span>
+
+<span class="n">test_data_int</span><span class="p">,</span> <span class="n">len_test</span>  <span class="o">=</span> <span class="n">convert_and_pad</span><span class="p">(</span><span class="n">word_dict</span><span class="p">,</span> <span class="n">review_to_words</span><span class="p">(</span><span class="n">test_review</span><span class="p">))</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">len_test</span><span class="p">]</span> <span class="o">+</span> <span class="n">test_data_int</span><span class="p">)])</span>
 </pre></div>
 
     </div>
